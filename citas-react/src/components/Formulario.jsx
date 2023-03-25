@@ -21,7 +21,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
 	// Se ejecuta cuando el componente ha cargado
 	useEffect(() => {
-		console.log('El componente está listo');
+		// console.log('El componente está listo');
 	}, []);
 
 	const generarId = () => {
