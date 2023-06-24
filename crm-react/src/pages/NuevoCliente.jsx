@@ -18,6 +18,10 @@ export async function action({request}) {
   if(!regex.test(email)) {
     errores.push('El email no es valido');
   }
+  // Retornar valores si hay errores
+  if(Object.keys(errores).length) {
+      return errores;
+  }
 
   await agregarCliente(datos)
   

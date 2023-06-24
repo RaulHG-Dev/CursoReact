@@ -1,11 +1,12 @@
 {
   "clientes": [
     {
-      "id": 1,
-      "nombre": "Juan",
-      "telefono": 102013313,
+      "nombre": "Juan (Actualizado)",
+      "empresa": "Codigo Con Juan",
       "email": "juan@juan.com",
-      "empresa": "Codigo Con Juan"
+      "telefono": "102013313",
+      "notas": "Nueva nota",
+      "id": 1
     },
     {
       "id": 2,
@@ -34,14 +35,6 @@
       "telefono": 1398198938,
       "email": "pedro@juan.com",
       "empresa": "Codigo Con Juan"
-    },
-    {
-      "nombre": "FAVIOLA",
-      "empresa": "OPL ALMACEN Y SERVICIOS",
-      "email": "hgraul963@gmail.com",
-      "telefono": "7772109674",
-      "notas": "asdfas",
-      "id": 6
     }
   ]
 }
