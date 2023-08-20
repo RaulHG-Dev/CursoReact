@@ -42,21 +42,12 @@ export function meta({ data }) {
   ];
 }
 
-export function links() {
-  return [
-    {
-      rel: "stylesheet",
-      href: styles,
-    },
-  ];
-}
-
 const Guitarra = () => {
   const guitarra = useLoaderData();
   const { nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
 
   return (
-    <main className="contenedor guitarra">
+    <div className="guitarra">
       <img
         className="imagen"
         src={imagen.data.attributes.url}
@@ -67,7 +58,7 @@ const Guitarra = () => {
         <p className="texto">{descripcion}</p>
         <p className="precio">${precio}</p>
       </div>
-    </main>
+    </div>
   );
 };
 
