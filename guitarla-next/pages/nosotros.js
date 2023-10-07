@@ -6,7 +6,7 @@ export default function Nosotros() {
       title={'Nosotros'}
       description="Sobre nosotros, guitarLA, tienda de música"
     >
-      Nosotros
+      <h1>Nosotros</h1>
     </Layout>
   )
 }
