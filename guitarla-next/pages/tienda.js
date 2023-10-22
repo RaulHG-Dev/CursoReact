@@ -1,5 +1,5 @@
+import Guitarra from "@/components/guitarra"
 import Layout from "@/components/layout"
-import ListadoGuitarras from "@/components/listado-guitarras"
 
 export default function Tienda({guitarras}) {
   // console.log(guitarras)
@@ -11,9 +11,13 @@ export default function Tienda({guitarras}) {
       <main className="contenedor">
         <h1 className="heading">Nuestra Colección</h1>
 
-        <ListadoGuitarras
-          guitarras={guitarras}
-        />
+        {guitarras?.map(guitarra => (
+          // console.log(guitarra);
+          <Guitarra
+            key={guitarra.id}
+            guitarra={guitarra.attributes}
+          />
+        ))}
       </main>
     </Layout>
   )
