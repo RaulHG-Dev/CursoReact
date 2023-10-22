@@ -1,4 +1,5 @@
 import Layout from "@/components/layout"
+import ListadoGuitarras from "@/components/listado-guitarras"
 
 export default function Tienda() {
   return (
@@ -6,7 +7,13 @@ export default function Tienda() {
       title={'Tienda Virtual'}
       description="Tienda virtual, venta de guitarras, instrumentos, GuitarLA"
     >
-      <h1>Tienda Virtual</h1>
+      <main className="contenedor">
+        <h1 className="heading">Nuestra Colección</h1>
+
+        <ListadoGuitarras
+          
+        />
+      </main>
     </Layout>
   )
 }
