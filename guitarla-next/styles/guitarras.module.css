@@ -74,6 +74,7 @@
     transition-property: background-color;
     transition-duration: 300ms;
 }
+
 .formulario input[type="submit"]:hover {
     background-color: var(--primary);
     cursor: pointer;
