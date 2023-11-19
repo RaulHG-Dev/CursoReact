@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from '../../styles/guitarras.module.css';
 import Layout from "@/components/layout";
 
-export default function Producto({guitarra}) {
+export default function Producto({guitarra, agregarCarrito}) {
     // Acceder a la url dinámica
     // const router = useRouter();
     const [cantidad, setCantidad] = useState(0)
@@ -23,7 +23,8 @@ export default function Producto({guitarra}) {
             precio,
             cantidad
         }
-        console.log(guitarraSeleccionada)
+        
+        agregarCarrito(guitarraSeleccionada)
     }
 
     return ( 
