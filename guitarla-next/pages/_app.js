@@ -50,5 +50,6 @@ export default function App({
     carrito = {carrito}
     agregarCarrito = {agregarCarrito}
     actualizarCantidad={actualizarCantidad}
+    eliminarProducto={eliminarProducto}
   />
 }
