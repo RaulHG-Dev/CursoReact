@@ -1,5 +1,5 @@
 import {
-  useState
+  useState, useEffect
 } from 'react'
 import '@/styles/globals.css'
 
@@ -7,7 +7,12 @@ export default function App({
   Component,
   pageProps
 }) {
-  const [carrito, setCarrito] = useState([])
+  const carritoLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('carrito')) ?? [] : []; 
+  const [carrito, setCarrito] = useState(carritoLS)
+
+  useEffect(() => {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+  }, [carrito]);
 
   const agregarCarrito = guitarra => {
     // Comprobar si la guitarra ya esta en el carrito...
