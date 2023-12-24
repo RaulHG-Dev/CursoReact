@@ -1,20 +1,24 @@
 ---
+import Curso from '../components/Curso.astro';
 import Posts from '../components/Posts.astro';
 import Guitarra from '../components/guitarra.astro';
 import Layout from '../layouts/Layout.astro';
 
 const urlGuitarras = `${import.meta.env.PUBLIC_API_URL}/guitarras?populate=imagen`
 const urlBlog = `${import.meta.env.PUBLIC_API_URL}/posts?populate=imagen`
+const urlCurso = `${import.meta.env.PUBLIC_API_URL}/curso?populate=imagen`
 
-const [resGuitarras, resBlog] = await Promise.all([
+const [resGuitarras, resBlog, resCurso] = await Promise.all([
 	fetch(urlGuitarras),
 	fetch(urlBlog),
+	fetch(urlCurso),
 ])
 
-const [{data: guitarras}, {data: posts}] = await Promise.all([
+const [{data: guitarras}, {data: posts}, {data: curso}] = await Promise.all([
 	resGuitarras.json(),
-	resBlog.json()
-])
+	resBlog.json(),
+	resCurso.json()
+]);
 ---
 
 <Layout title="Inicio" description='Página de tienda de instrumentos musicales, guitarras, cursos, blog y más'>
@@ -33,7 +37,11 @@ const [{data: guitarras}, {data: posts}] = await Promise.all([
 			))}
 		</div>
 	</main>
-
+	<Curso
+		titulo={curso.attributes.titulo}
+		contenido={curso.attributes.contenido}
+		imagen={curso.attributes.imagen.data.attributes.url}
+	/>
 	<section class="contenedor">
 		<h2 class="heading">Blog</h2>
 		<div class="grid">
