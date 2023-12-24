@@ -1,4 +1,5 @@
 ---
+import ComponenteReact from '../components/ComponenteReact';
 import Curso from '../components/Curso.astro';
 import Posts from '../components/Posts.astro';
 import Guitarra from '../components/guitarra.astro';
@@ -42,6 +43,7 @@ const [{data: guitarras}, {data: posts}, {data: curso}] = await Promise.all([
 		contenido={curso.attributes.contenido}
 		imagen={curso.attributes.imagen.data.attributes.url}
 	/>
+	<ComponenteReact/>
 	<section class="contenedor">
 		<h2 class="heading">Blog</h2>
 		<div class="grid">
